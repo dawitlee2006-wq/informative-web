@@ -60,25 +60,28 @@ body {
   display: flex;
   gap: 12px;
   width: 100%;
+  /* 필요하다면 form 자체에 높이를 직접 지정할 수도 있습니다 (예: height: 120px;) */
 }
 
 .search_section input {
   flex: 1;
-  padding: 16px 20px;
-  font-size: 1.1rem;
+  /* 📌 세로 높이를 꽉 채우도록 padding 상하값을 30px~40px 이상으로 대폭 확대 */
+  padding: 35px 24px; 
+  font-size: 1.4rem;  /* 높이에 맞춰 글자 크기도 확대 */
   border: 2px solid #ced4da;
-  border-radius: 12px;
+  border-radius: 16px;
   outline: none;
   background-color: #ffffff;
 }
 
 .search_section button {
-  padding: 16px 32px;
+  /* 📌 input과 동일한 높이감을 유지하도록 padding 조정 */
+  padding: 35px 40px; 
   background-color: #ce2b37;
   color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
+  border-radius: 16px;
+  font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
@@ -128,6 +131,6 @@ body {
 
 /* 📌 오른쪽 aside 영역: 비어있는 여백 공간 확보 */
 aside {
-  width: 250px; /* 오른쪽 공간 너비 */
+  width: 200px; /* 오른쪽 공간 너비 */
   flex-shrink: 0;
 }
