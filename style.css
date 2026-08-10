@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 회색 바탕 배경 */
+body {
+  background-color: #e9ecef;
+  color: #333;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap; /* header는 상단 전체 차지 */
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* 🇮🇹 슬림한 이탈리아 국기 헤더 (상단 전체 너비) */
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(
+    to right, 
+    #009246 0%, #009246 10%, 
+    #ffffff 10%, #ffffff 90%, 
+    #ce2b37 90%, #ce2b37 100%
+  );
+}
+
+.header .title {
+  font-size: 1.8rem;
+  color: #111111;
+  margin-bottom: 0.2rem;
+  font-weight: 800;
+}
+
+.header p {
+  color: #666666;
+  font-size: 0.95rem;
+}
+
+/* 📌 main 영역: 전체 가로 공간 중 왼쪽을 넓게 차지 */
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 🔍 검색창 섹션 */
+.search_section {
+  width: 100%;
+}
+
+.search_section form {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  /* 필요하다면 form 자체에 높이를 직접 지정할 수도 있습니다 (예: height: 120px;) */
+}
+
+.search_section input {
+  flex: 1;
+  /* 📌 세로 높이를 꽉 채우도록 padding 상하값을 30px~40px 이상으로 대폭 확대 */
+  padding: 35px 24px; 
+  font-size: 1.4rem;  /* 높이에 맞춰 글자 크기도 확대 */
+  border: 2px solid #ced4da;
+  border-radius: 16px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.search_section button {
+  /* 📌 input과 동일한 높이감을 유지하도록 padding 조정 */
+  padding: 35px 40px; 
+  background-color: #ce2b37;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ✂️ 수평 구분선 */
+.divider, hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #009246, #ce2b37, transparent);
+  margin: 2rem 0;
+}
+
+/* 🏁 도시 카드들을 가로로 딱 3개씩 배치하는 그리드 */
+.city_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 📌 앞으로 div가 계속 추가되어도 3개씩 줄바꿈 */
+  gap: 16px;
+  width: 100%;
+}
+
+/* ⚪ 흰색 div 박스 */
+.city_list > div {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.city_list > div img,
+.city_list > div image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.city_list > div h3 {
+  font-size: 1.1rem;
+  color: #111;
+  text-align: center;
+}
+
+/* 📌 오른쪽 aside 영역: 비어있는 여백 공간 확보 */
+aside {
+  width: 200px; /* 오른쪽 공간 너비 */
+  flex-shrink: 0;
+}
