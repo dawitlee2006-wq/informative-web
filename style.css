@@ -134,3 +134,8 @@ aside {
   width: 200px; /* 오른쪽 공간 너비 */
   flex-shrink: 0;
 }
+
+.nocity {
+  font-size: 0.8rem;
+  color: #ce2b37;
+}
