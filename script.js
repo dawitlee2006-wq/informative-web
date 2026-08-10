@@ -31,7 +31,9 @@ searchForm.addEventListener("submit", function(event) {
         } else {
             card.style.display = "none";
         }
-    });
+    })
+
+    
 
     if (!cardFound) {
         cityCards.forEach(function(card) {
