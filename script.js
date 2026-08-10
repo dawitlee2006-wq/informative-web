@@ -1,9 +1,9 @@
 // HTML의 <form class="inputbox"> 요소를 선택합니다.
-const searchForm = document.querySelector(".inputbox");
+const searchForm = document.querySelector(".formbox");
 // form 내부에 있는 text input 요소를 선택합니다.
 const searchInput = searchForm.querySelector("input[type='text']");
 
-const nocitymessage=document.querySelector(".nocity");
+const alertmessage=document.querySelector(".alertmessage");
 
 
 // 폼이 제출(검색 버튼 클릭 또는 엔터키 입력)될 때 이벤트 실행
@@ -27,7 +27,7 @@ searchForm.addEventListener("submit", function(event) {
         if (cityName.includes(query)) {
             card.style.display = "block"; // 카드 표시
             cardFound = true; // 검색어에 맞는 카드가 존재함
-            nocitymessage.hidden=true;
+            alertmessage.hidden=true;
         } else {
             card.style.display = "none";
         }
@@ -36,7 +36,7 @@ searchForm.addEventListener("submit", function(event) {
     if (!cardFound) {
         cityCards.forEach(function(card) {
             card.style.display = "block"; //모든 카드 표시
-            nocitymessage.hidden=false;
+            alertmessage.hidden=false;
         });
     }
 });
