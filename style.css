@@ -139,3 +139,190 @@ aside {
   font-size: 0.8rem;
   color: #ce2b37;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 회색 바탕 배경 및 텍스트 선명도 제어 */
+body {
+  background-color: #f4f6f8; /* 조금 더 밝고 세련된 회색 */
+  color: #2b2b2b;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* 🇮🇹 이탈리아 국기 헤더 */
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 1.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(
+    to right, 
+    #009246 0%, #009246 12%, 
+    #ffffff 12%, #ffffff 88%, 
+    #ce2b37 88%, #ce2b37 100%
+  );
+}
+
+.header .title {
+  font-size: 2.2rem;
+  color: #111111;
+  margin-bottom: 0.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  color: #555555;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 📌 main 영역 */
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 🔍 검색창 섹션 개선 */
+.search_section {
+  width: 100%;
+}
+
+.search_section form {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  position: relative;
+}
+
+.search_section input {
+  flex: 1;
+  padding: 22px 24px; 
+  font-size: 1.15rem;
+  border: 2px solid #dee2e6;
+  border-radius: 14px;
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+/* 검색창 입력 시 이탈리아 초록색 포인트 포커스 */
+.search_section input:focus {
+  border-color: #009246;
+  box-shadow: 0 0 0 4px rgba(0, 146, 70, 0.15);
+}
+
+.search_section button {
+  padding: 0 36px; 
+  background-color: #ce2b37;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(206, 43, 55, 0.25);
+}
+
+.search_section button:hover {
+  background-color: #b2202b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(206, 43, 55, 0.35);
+}
+
+/* ✂️ 구분선 */
+.divider, hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #009246, #ce2b37, transparent);
+  margin: 2.2rem 0;
+  opacity: 0.8;
+}
+
+/* 🏁 도시 카드 그리드 */
+.city_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* ⚪ 도시 카드 스타일 개선 (호버 반응형 추가) */
+.city_list > a {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* 마우스를 올렸을 때 부드럽게 위로 떠오르는 애니메이션 */
+.city_list > a:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  border-color: rgba(206, 43, 55, 0.2);
+}
+
+/* 이미지 컨테이너 확대 효과 준비 */
+.city_list > a img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.9rem;
+  transition: transform 0.4s ease;
+}
+
+/* 카드 호버 시 이미지 살짝 확대 (Zoom-in 효과) */
+.city_list > a:hover img {
+  transform: scale(1.04);
+}
+
+.city_list > a h3 {
+  font-size: 1.2rem;
+  color: #111;
+  text-align: center;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+/* 마우스 올렸을 때 제목 색상 변경 */
+.city_list > a:hover h3 {
+  color: #ce2b37;
+}
+
+/* 📌 오른쪽 aside 영역 */
+aside {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.alertmessage {
+  font-size: 0.85rem;
+  color: #ce2b37;
+  margin-top: 8px;
+  font-weight: 600;
+}
