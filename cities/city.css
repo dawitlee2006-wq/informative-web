@@ -1,0 +1,241 @@
+/* ==================================================
+   도시 상세 페이지 전용 슬림 비주얼 헤더 (city.css)
+   ================================================== */
+
+/* 공통 헤더 뼈대 (컴팩트 높이 설정) */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 120px; /* 높이를 슬림하게 대폭 축소 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 어두운 그라데이션 오버레이 (글자 가독성 보장) */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 23, 42, 0.35) 0%, 
+    rgba(15, 23, 42, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+
+
+/* --------------------------------------------------
+   1. 👠 밀라노 (milanoheader) - 밀라노 두오모 배경
+   -------------------------------------------------- */
+.header.milanoheader {
+  background-image: url('https://www.itabus.it/on/demandware.static/-/Sites-ITABUS-Library/default/dw5dcf13c2/Destinazioni/Lombardia/Milano/Duomo.jpg');
+  border-top: 4px solid #2563eb;
+  border-bottom: 3px solid #38bdf8;
+}
+
+/* --------------------------------------------------
+   2. 🏛️ 로마 (romaheader) - 콜로세움 배경
+   -------------------------------------------------- */
+.header.romaheader {
+  background-image: url('https://www.civitatis.com/blog/wp-content/uploads/2024/10/roma3-scaled.jpg');
+  border-top: 4px solid #ce2b37;
+  border-bottom: 3px solid #ffd700;
+}
+
+/* --------------------------------------------------
+   3. ⚜️ 피렌체 (firenzeheader) - 두오모 전경 배경
+   -------------------------------------------------- */
+.header.firenzeheader {
+  background-image: url('https://tourismmedia.italia.it/is/image/mitur/20220314122814-firenze-toscana-gettyimages-479035945?wid=1080&hei=660&fit=constrain,1&fmt=webp');
+  border-top: 4px solid #d97706;
+  border-bottom: 3px solid #f59e0b;
+}
+
+/* --------------------------------------------------
+   4. 🎭 베네치아 (veneziaheader) - 베네치아 대운하 배경
+   -------------------------------------------------- */
+.header.veneziaheader {
+  background-image: url('https://www.itabus.it/on/demandware.static/-/Sites-ITABUS-Library/default/dw32751e5c/Destinazioni/Veneto/Venezia/Canal-Grande-e-sulla-Basilica-di-Santa-Maria-della-Salute-a-Venezia.jpg');
+  border-top: 4px solid #00a859;
+  border-bottom: 3px solid #34d399;
+}
+
+/* --------------------------------------------------
+   뒤로가기 버튼
+   -------------------------------------------------- */
+.back-button-wrapper {
+  margin: 1.2rem 0;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0f172a;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #ce2b37;
+  transform: translateX(-3px);
+}
+
+/* 타이틀 시작
+
+/* ==================================================
+   도시 상세 페이지 전용 슬림 비주얼 헤더 (city.css)
+   ================================================== */
+
+/* 공통 헤더 뼈대 (컴팩트 높이 & 세로 정렬) */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column; /* h1과 h3를 위아래로 배치 */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  gap: 6px; /* h1과 h3 사이 간격 */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 어두운 그라데이션 오버레이 (가독성 확보) */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 23, 42, 0.35) 0%, 
+    rgba(15, 23, 42, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+/* 1. h1 타이틀 (네모 박스 제거 & 입체 드롭 섀도 적용) */
+.header .title {
+  position: relative;
+  z-index: 2;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  background: none; /* 기존 글래스모피즘 배경 제거 */
+  border: none;
+  backdrop-filter: none;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* 2. h3 B급 별명 (커뮤니티 태그 뱃지 스타일) */
+.header .subtitle-tag {
+  position: relative;
+  z-index: 2;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+  padding: 4px 14px;
+  background-color: rgba(15, 23, 42, 0.75); /* 살짝 어두운 반투명 칩 */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: -0.3px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------
+   도시별 시그니처 테마 (배경 이미지 & Border 포인트)
+   -------------------------------------------------- */
+
+/* 1. 👠 밀라노 (milanoheader) */
+.header.milanoheader {
+  background-image: url('https://www.itabus.it/on/demandware.static/-/Sites-ITABUS-Library/default/dw5dcf13c2/Destinazioni/Lombardia/Milano/Duomo.jpg');
+  border-top: 4px solid #2563eb;
+  border-bottom: 3px solid #38bdf8;
+}
+.milanoheader .subtitle-tag {
+  border-left: 3px solid #60a5fa;
+}
+
+/* 2. 🏛️ 로마 (romaheader) */
+.header.romaheader {
+  background-image: url('https://www.civitatis.com/blog/wp-content/uploads/2024/10/roma3-scaled.jpg');
+  border-top: 4px solid #ce2b37;
+  border-bottom: 3px solid #ffd700;
+}
+.romaheader .subtitle-tag {
+  border-left: 3px solid #ff4d5a;
+}
+
+/* 3. ⚜️ 피렌체 (firenzeheader) */
+.header.firenzeheader {
+  background-image: url('https://tourismmedia.italia.it/is/image/mitur/20220314122814-firenze-toscana-gettyimages-479035945?wid=1080&hei=660&fit=constrain,1&fmt=webp');
+  border-top: 4px solid #d97706;
+  border-bottom: 3px solid #f59e0b;
+}
+.firenzeheader .subtitle-tag {
+  border-left: 3px solid #fbbf24;
+}
+
+/* 4. 🎭 베네치아 (veneziaheader) */
+.header.veneziaheader {
+  background-image: url('https://www.itabus.it/on/demandware.static/-/Sites-ITABUS-Library/default/dw32751e5c/Destinazioni/Veneto/Venezia/Canal-Grande-e-sulla-Basilica-di-Santa-Maria-della-Salute-a-Venezia.jpg');
+  border-top: 4px solid #00a859;
+  border-bottom: 3px solid #34d399;
+}
+.veneziaheader .subtitle-tag {
+  border-left: 3px solid #34d399;
+}
+
+/* --------------------------------------------------
+   뒤로가기 버튼
+   -------------------------------------------------- */
+.back-button-wrapper {
+  margin: 1.2rem 0;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0f172a;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #ce2b37;
+  transform: translateX(-3px);
+}
