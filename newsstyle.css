@@ -1,5 +1,5 @@
 /* ==================================================
-   1. Reset & Typography
+   1. Reset & Variables
    ================================================== */
 * {
   box-sizing: border-box;
@@ -24,7 +24,7 @@ body {
 }
 
 /* ==================================================
-   2. Header Section (SBH 뉴스풍 정갈한 헤더)
+   2. Header & Navigation
    ================================================== */
 .header {
   text-align: center;
@@ -45,208 +45,16 @@ body {
   font-size: 0.95rem;
   color: var(--text-gray);
   font-weight: 500;
+  margin-bottom: 1.2rem;
 }
 
-/* ==================================================
-   3. 2-Column Layout (메인 콘텐츠 + 우측 사이드바)
-   ================================================== */
-.page-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  display: flex;
-  gap: 30px; /* 메인 영역과 사이드바 사이 여백 */
-}
-
-/* 왼쪽 메인 영역 */
-.main {
-  flex: 1;
-  min-width: 0; /* Flex 자식 요소 넘침 방지 */
-}
-
-/* 오른쪽 사이드바 (애드센스 광고 & 위젯 공간) */
-aside {
-  width: 300px; /* 애드센스 표준 사이드바 너비 (300x250, 300x600 대응) */
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* ==================================================
-   4. Search Section (검색바)
-   ================================================== */
-.formbox {
-  display: flex;
-  gap: 8px;
-  width: 100%;
-}
-
-.formbox .nameinput {
-  flex: 1;
-  padding: 12px 14px;
-  font-size: 0.95rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.formbox .nameinput:focus {
-  border-color: var(--italy-green);
-}
-
-.formbox .searchbutton {
-  padding: 12px 24px;
-  background-color: var(--italy-red);
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.formbox .searchbutton:hover {
-  background-color: #b2202b;
-}
-
-.alertmessage {
-  color: var(--italy-red);
-  font-size: 0.85rem;
-  margin-top: 0.8rem;
-  font-weight: 600;
-}
-
-hr {
-  border: none;
-  border-top: 1px solid var(--border-color);
-  margin: 1.8rem 0;
-}
-
-/* ==================================================
-   5. News Grid Layout (도시 카드 3열 배치)
-   ================================================== */
-.city_list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 사이드바 고려 3열 배치 */
-  gap: 16px;
-}
-
-.citycardlink {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.citycardlink:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-  border-color: var(--italy-red);
-}
-
-.citycardlink img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.citycardlink .cityname {
-  padding: 0.9rem;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  text-align: center;
-  margin: 0;
-  transition: color 0.2s;
-}
-
-.citycardlink:hover .cityname {
-  color: var(--italy-red);
-}
-
-/* ==================================================
-   6. AdSense Ad Placeholders (광고 레이아웃 프레임)
-   ================================================== */
-/* 본문 내 상단/하단 배너 광고용 */
-.ad-banner-box {
-  width: 100%;
-  min-height: 100px;
-  background-color: var(--ad-bg);
-  border: 1px dashed #cbd5e1;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  color: #94a3b8;
-  font-size: 0.85rem;
-}
-
-/* 우측 사이드바 전용 광고 박스 (300x250, 300x600) */
-.ad-sidebar-box {
-  width: 100%;
-  min-height: 250px;
-  background-color: var(--ad-bg);
-  border: 1px dashed #cbd5e1;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #94a3b8;
-  font-size: 0.85rem;
-  /* 스크롤해도 사이드바 광고가 고정되어 따라오도록 설정 */
-  position: sticky;
-  top: 20px;
-}
-
-/* ==================================================
-   7. Responsive (반응형 모바일 대응)
-   ================================================== */
-@media (max-width: 992px) {
-  .page-wrapper {
-    flex-direction: column; /* 모바일/태블릿에서는 사이드바가 메인 아래로 이동 */
-  }
-
-  aside {
-    width: 100%;
-  }
-
-  .ad-sidebar-box {
-    position: static;
-    min-height: 150px;
-  }
-}
-
-@media (max-width: 600px) {
-  .city_list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .header .title {
-    font-size: 2rem;
-  }
-}
-
-/* ==================================================
-   GNB Navigation (디시 + 미디어 하이브리드 nav)
-   ================================================== */
 .main-nav {
   background-color: #ffffff;
   border-top: 1px solid var(--border-color);
-  border-bottom: 2px solid var(--text-dark);
   padding: 0.5rem 0;
   position: sticky;
   top: 0;
-  z-index: 100; /* 스크롤해도 상단에 고정 */
+  z-index: 100;
 }
 
 .nav-list {
@@ -256,7 +64,7 @@ hr {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -270,7 +78,6 @@ hr {
   border-radius: 20px;
   transition: all 0.2s ease;
   display: inline-block;
-  cursor: pointer;
 }
 
 .nav-item:hover,
@@ -279,7 +86,6 @@ hr {
   background-color: var(--text-dark);
 }
 
-/* 🔥 핫썰 포인트 태그 */
 .nav-item.tag-hot {
   color: var(--italy-red);
 }
@@ -289,7 +95,6 @@ hr {
   color: #ffffff;
 }
 
-/* 📰 진지한 시사 포인트 태그 */
 .nav-item.tag-news {
   color: var(--italy-green);
 }
@@ -300,36 +105,155 @@ hr {
 }
 
 /* ==================================================
-   Back to Main Button (메인으로 돌아가기 버튼)
+   3. Main Layout (Grid 구조로 왼쪽 내용 + 우측 사이드바)
    ================================================== */
-.back-button-wrapper {
-  margin: 1.5rem 0 1rem 0;
+main.main {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  /* 1열: 검색창 및 도시목록 (나머지 전체) / 2열: 300px 고정 광고 사이드바 */
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
 }
 
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  text-decoration: none;
-  font-size: 0.9rem;
+/* ==================================================
+   4. Search Box
+   ================================================== */
+.formbox {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.formbox .nameinput {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  outline: none;
+}
+
+.formbox .searchbutton {
+  padding: 10px 20px;
+  background-color: var(--italy-red);
+  color: #ffffff;
+  font-size: 0.95rem;
   font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.alertmessage {
+  color: var(--italy-red);
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+hr {
+  grid-column: 1 / 2; /* hr 태그가 1열에만 위치하도록 제어 */
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}
+
+/* ==================================================
+   5. City List Grid (한 줄에 3개 배치)
+   ================================================== */
+.city_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열 슬림 카드 */
+  gap: 12px;
+}
+
+.citycardlink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background-color: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  transition: all 0.2s ease;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* 마우스 올렸을 때 애니메이션 */
-.back-btn:hover {
-  background-color: var(--text-dark);
-  color: #ffffff;
-  border-color: var(--text-dark);
-  transform: translateX(-3px); /* 화살표 방향인 왼쪽으로 살짝 이동 */
+.citycardlink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--italy-red);
 }
 
-.back-btn .arrow {
-  font-size: 1.1rem;
-  line-height: 1;
+.citycardlink img {
+  width: 100%;
+  height: 110px; /* 카드가 커지지 않게 슬림한 세로 높이 */
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
+  display: block;
+}
+
+.citycardlink .cityname {
+  padding: 0.6rem 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  text-align: center;
+  margin: 0;
+}
+
+/* ==================================================
+   6. Sidebar & Ad Box (우측 고정 300px)
+   ================================================== */
+aside.sidebar {
+  /* Grid 2열 전체 높이에 위치 */
+  grid-column: 2;
+  grid-row: 1 / span 10;
+  position: sticky;
+  top: 20px;
+}
+
+.ad-box {
+  width: 100%;
+  min-height: 400px;
+  background-color: var(--ad-bg);
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* ==================================================
+   7. Responsive (화면 폭 축소 시 대응)
+   ================================================== */
+@media (max-width: 900px) {
+  main.main {
+    grid-template-columns: 1fr; /* 화면이 좁아지면 1열로 세로 정렬 */
+  }
+
+  aside.sidebar {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+  }
+
+  .ad-box {
+    min-height: 150px;
+  }
+
+  hr {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .city_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
