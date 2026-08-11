@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ita">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이탈리아 투데이</title>
+    <title> Italia Today </title>
     <link rel="stylesheet" href="newsstyle.css">
 </head>
 
 <body>
     
     <header class="header">
-        <h1 class="title" > 이탈리아 투데이 </h1>
-        <p> 이탈리아의 황당한 핫썰부터 깊이 있는 로컬 뉴스까지 </p>
+        <h1 class="title" > Italia Today </h1>
+        <p> Dalle storie locali più assurde fino alle notizie del posto più approfondite </p>
         <nav class="main-nav">
         <ul class="nav-list">
             
-            <li><a href="#hot" class="nav-item tag-hot">🔥 현지 핫썰</a></li>
-            <li><a href="#calcio" class="nav-item">⚽ 축구·세리에A</a></li>
-            <li><a href="#history" class="nav-item">🏛️ 야사·비하인드</a></li>
-            <li><a href="#life" class="nav-item">☕ 로컬 라이프</a></li>
-            <li><a href="#issue" class="nav-item tag-news">📰 진지한 시사</a></li>
+            <li><a href="#hot" class="nav-item tag-hot">🔥 notizie hot</a></li>
+            <li><a href="#calcio" class="nav-item">⚽ sport</a></li>
+            <li><a href="#history" class="nav-item">🏛️ storia</a></li>
+            <li><a href="#life" class="nav-item">☕ vita locale</a></li>
+            <li><a href="#issue" class="nav-item tag-news">📰 notizie noiose</a></li>
         </ul>
     </nav>
 
@@ -31,49 +31,58 @@
 
     <main class="main">
         <section>
-            <form class="formbox">
-                <input  class="input nameinput" type="text" placeholder="도시 이름을 입력하세요">
-                <button class="button searchbutton" type="submit">검색</button>   
-                <p hidden class="alertmessage"> 아직 등록되지 않았거나 존재하지 않는 도시입니다. </p>  
+            <form class="formbox" >
+                <input  class="input nameinput" type="text" placeholder="Inserisci la città che ti interessa" >
+                <button class="button searchbutton" type="submit">Trova</button>   
+                <p hidden class="alertmessage"> Città non trovata </p>  
             </form>
         </section>
 
         <hr>
 
         <section class="city_list">
-            <a class="citycardlink" href="C:\Users\lee's and m\Desktop\projects\project_no1\cities\roma.html"> 
-                <img src="https://www.civitatis.com/blog/wp-content/uploads/2024/10/roma3-scaled.jpg" alt="로마">
-                <h3 class="cityname"> 로마 </h3>
+            <a class="citycardlink" href="./cities/roma.html"> 
+                <img src="../project_no1/photos/romaphoto.webp" alt="Roma">
+                <h3 class="cityname"> Roma </h3>
             </a>
 
-            <a class="citycardlink" href="C:\Users\lee's and m\Desktop\projects\project_no1\cities\firenze.html">
-               <img src="https://tourismmedia.italia.it/is/image/mitur/20220314122814-firenze-toscana-gettyimages-479035945?wid=1080&hei=660&fit=constrain,1&fmt=webp" alt="피렌체">
-                <h3 class="cityname"> 피렌체 </h3>
+            <a class="citycardlink" href="./cities/firenze.html">
+               <img src="../project_no1/photos/firenzephoto.webp" alt="Roma">
+                <h3 class="cityname"> Firenze </h3>
             </a>
 
-            <a class="citycardlink" href="C:\Users\lee's and m\Desktop\projects\project_no1\cities\milano.html">
-                <img src="https://www.itabus.it/on/demandware.static/-/Sites-ITABUS-Library/default/dw5dcf13c2/Destinazioni/Lombardia/Milano/Duomo.jpg" alt="밀라노">
-                <h3 class="cityname"> 밀라노 </h3>
+            <a class="citycardlink" href="./cities/milano.html">
+                <img src="../project_no1/photos/milanophoto.avif" alt="Milano">
+                <h3 class="cityname"> Milano </h3>
             </a>
 
-            <a class="citycardlink" href="C:\Users\lee's and m\Desktop\projects\project_no1\cities\venezia.html">
-                <img src="https://www.itabus.it/on/demandware.static/-/Sites-ITABUS-Library/default/dw32751e5c/Destinazioni/Veneto/Venezia/Canal-Grande-e-sulla-Basilica-di-Santa-Maria-della-Salute-a-Venezia.jpg" alt="베네치아">
-                <h3 class="cityname"> 베네치아 </h3>
+            <a class="citycardlink" href="./cities/venezia.html">
+                <img src="../project_no1/photos/veneziaphoto.webp" alt="Venezia">
+                <h3 class="cityname"> Venezia </h3>
             </a>
            
         </section>
+ 
         <script src="script.js"></script>
 
         <aside class="sidebar">
             <div class="ad-box">
-                
             </div>
-
         </aside>
 
+        <footer>
 
 
-    </main>
+
+        </footer>
+
+</main>
+        
+        
+
+
+
+   
     
 
     

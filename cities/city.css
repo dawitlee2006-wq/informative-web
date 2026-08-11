@@ -239,3 +239,32 @@
   background-color: #ce2b37;
   transform: translateX(-3px);
 }
+
+/* 목록 영역 점 없애기 및 여백 제거 */
+.unorderedlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ccc;
+}
+
+/* 개별 목록 구분선 */
+.unorderedlist li {
+    border-bottom: 1px solid #eee;
+}
+
+/* 핵심: a 태그를 block으로 만들어 li 내부 전체를 클릭 영역으로 만들기 */
+.unorderedlist li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+/* 마우스 올렸을 때 반짝이는 호버 효과 */
+.unorderedlist li a:hover {
+    background-color: #f5f5f5;
+    color: #337ab7; /* 디시인사이드 스타일 파란색 */
+}
+
